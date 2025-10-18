@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://bxki4tmu3aj1s"]
+[gd_scene load_steps=13 format=3 uid="uid://bxki4tmu3aj1s"]
 
 [ext_resource type="Texture2D" uid="uid://dsscj83g812ca" path="res://Characters/Npc/kirby_idle.png" id="1_6jogw"]
 [ext_resource type="Script" uid="uid://bdty1tcvgy4ke" path="res://Characters/Npc/Npc.gd" id="1_f4i7g"]
 [ext_resource type="Texture2D" uid="uid://begtcjkl6tjrw" path="res://Management/dialoguebox/creepersprite.png" id="3_xbboc"]
+[ext_resource type="Texture2D" uid="uid://bttimkhxhx6ve" path="res://Management/dialoguebox/png fundo transparente.png" id="4_nsmq5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6jogw"]
 radius = 19.0
@@ -51,7 +52,7 @@ _data = {
 radius = 53.037724
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f4i7g"]
-bg_color = Color(0, 0, 0, 0.56078434)
+bg_color = Color(0, 0, 0, 0)
 
 [sub_resource type="LabelSettings" id="LabelSettings_xbboc"]
 
@@ -101,16 +102,22 @@ label_settings = SubResource("LabelSettings_xbboc")
 autowrap_mode = 2
 
 [node name="DialogueText" type="Label" parent="Area2D/CanvasLayer"]
+z_index = 1
 offset_left = 340.0
 offset_top = 486.0
 offset_right = 980.0
 offset_bottom = 648.0
+autowrap_mode = 2
 
 [node name="creeper" type="Sprite2D" parent="Area2D/CanvasLayer"]
 z_index = -1
 position = Vector2(1082, 419)
 scale = Vector2(0.404, 0.40399998)
 texture = ExtResource("3_xbboc")
+
+[node name="shadowbox" type="Sprite2D" parent="Area2D/CanvasLayer"]
+position = Vector2(640, 523)
+texture = ExtResource("4_nsmq5")
 
 [node name="InteractionLabel" type="Label" parent="Area2D"]
 offset_left = -4.0

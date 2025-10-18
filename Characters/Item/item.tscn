@@ -1,0 +1,77 @@
+[gd_scene load_steps=9 format=3 uid="uid://dsdiknpbmp05u"]
+
+[ext_resource type="Script" uid="uid://bsrxansh4sl0j" path="res://Characters/Item/item.gd" id="1_h10mi"]
+[ext_resource type="Texture2D" uid="uid://byw8oexcpyen7" path="res://Management/dialoguebox/item.jpg" id="2_kq5l2"]
+[ext_resource type="Texture2D" uid="uid://bttimkhxhx6ve" path="res://Management/dialoguebox/png fundo transparente.png" id="3_kq5l2"]
+[ext_resource type="Texture2D" uid="uid://cupix8sfpn550" path="res://Management/dialoguebox/sprite.jpeg" id="4_kq5l2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2nd43"]
+radius = 23.0
+height = 50.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_3dboq"]
+font_size = 10
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h10mi"]
+radius = 65.27634
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2nd43"]
+bg_color = Color(0, 0, 0, 0.34117648)
+
+[node name="ItemSprite" type="StaticBody2D"]
+script = ExtResource("1_h10mi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -25)
+scale = Vector2(0.050318874, 0.050318874)
+texture = ExtResource("2_kq5l2")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -25)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_2nd43")
+
+[node name="InteractionLabel" type="Label" parent="."]
+offset_left = -4.0
+offset_top = -65.0
+offset_right = 45.0
+offset_bottom = -42.0
+text = "POYO!"
+label_settings = SubResource("LabelSettings_3dboq")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 9
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -24)
+shape = SubResource("CircleShape2D_h10mi")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Area2D"]
+
+[node name="DialogueBox" type="Sprite2D" parent="Area2D/CanvasLayer"]
+position = Vector2(640, 523)
+texture = ExtResource("3_kq5l2")
+
+[node name="Timer" type="Timer" parent="Area2D/CanvasLayer"]
+
+[node name="DialogueText" type="Label" parent="Area2D/CanvasLayer"]
+z_index = 1
+offset_left = 340.0
+offset_top = 486.0
+offset_right = 980.0
+offset_bottom = 648.0
+autowrap_mode = 2
+
+[node name="BlurredBackground" type="Label" parent="Area2D/CanvasLayer"]
+offset_right = 1280.0
+offset_bottom = 648.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_2nd43")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D/CanvasLayer"]
+position = Vector2(640, 199)
+scale = Vector2(1.0925926, 1.0925926)
+texture = ExtResource("4_kq5l2")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

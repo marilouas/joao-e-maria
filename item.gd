@@ -1,11 +1,13 @@
 extends StaticBody2D
-class_name Npc
+class_name Item
 
-@onready var interactionlabel: Label = $Area2D/InteractionLabel
-@onready var dialogue_box: Label = $Area2D/CanvasLayer/DialogueBox
+@onready var dialogue_box: Sprite2D = $Area2D/CanvasLayer/DialogueBox
 @onready var dialogue_text: Label = $Area2D/CanvasLayer/DialogueText
-@onready var creeper: Sprite2D = $Area2D/CanvasLayer/creeper
-@onready var shadowbox: Sprite2D = $Area2D/CanvasLayer/shadowbox
+@onready var blurred_background: Label = $Area2D/CanvasLayer/BlurredBackground
+@onready var sprite_2d: Sprite2D = $Area2D/CanvasLayer/Sprite2D
+@onready var interaction_label: Label = $InteractionLabel
+
+
 
 var _character_ref: BaseCharacter = null
 var talking = false
@@ -16,32 +18,32 @@ var skip_text = false
 var index_line = 0
 
 var lines = [
-	"POYO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
-	"Vai se fuder.",
-	"HAAAAY!!!!!!!!!!!!",
-	"sai daqui",
-	"aaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaa aaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+	"SPRITE!",
+	"SPRITE SPRITE!!",
+	"SPRITE SPRITE SPRITE!!!",
+	"SPRITE SPRITE SPRITE SPRITE SPRITE!!!!",
+	"SPRITE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 ]
 
 func _ready() -> void:
 	dialogue_box.visible = false
 	dialogue_text.visible = false
-	interactionlabel.visible = false
-	creeper.visible = false
-	shadowbox.visible = false
+	interaction_label.visible = false
+	sprite_2d.visible = false
+	blurred_background.visible = false
 
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
 	if _body is BaseCharacter:
 		_character_ref = _body
-		interactionlabel.text = "[E]"
-		interactionlabel.visible = true
+		interaction_label.text = "[E]"
+		interaction_label.visible = true
 	print(_body)
 
 
 func _on_area_2d_body_exited(_body: Node2D) -> void:
 	_character_ref = null
-	interactionlabel.visible = false
+	interaction_label.visible = false
 	if talking:
 		end_dialogue()
 
@@ -59,11 +61,11 @@ func _process(delta: float) -> void:
 
 func start_dialogue():
 	talking = true
-	interactionlabel.visible = false
+	interaction_label.visible = false
 	dialogue_box.visible = true
 	dialogue_text.visible = true
-	creeper.visible = true
-	shadowbox.visible = true
+	sprite_2d.sivible = true
+	blurred_background.visible = true
 	index_line = 0
 	next_line()
 
@@ -100,5 +102,5 @@ func end_dialogue():
 	skip_text = false
 	dialogue_box.visible = false
 	dialogue_text.visible = false
-	creeper.visible = false
-	shadowbox.visible = false
+	sprite_2d.sivible = false
+	blurred_background.visible = false
