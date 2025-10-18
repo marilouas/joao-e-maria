@@ -1,0 +1,74 @@
+[gd_scene load_steps=9 format=3 uid="uid://m00jrjiynkxa"]
+
+[ext_resource type="PackedScene" uid="uid://bgcjt77revgdq" path="res://Characters/Yellow Units/Warrior/base_character.tscn" id="1_irwnv"]
+[ext_resource type="Texture2D" uid="uid://4jtummnofmsx" path="res://Characters/Yellow Units/Warrior/Spritesheet.png" id="2_q5kha"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ku4f3"]
+radius = 3.0
+height = 22.0
+
+[sub_resource type="Animation" id="Animation_ku4f3"]
+length = 0.001
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_q5kha"]
+resource_name = "Run"
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_a7ivg"]
+resource_name = "correr"
+length = 2.0
+step = 0.5
+
+[sub_resource type="Animation" id="Animation_gjfjd"]
+resource_name = "new_animation"
+step = 0.5
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a7ivg"]
+_data = {
+&"RESET": SubResource("Animation_ku4f3"),
+&"Run": SubResource("Animation_q5kha"),
+&"correr": SubResource("Animation_a7ivg"),
+&"new_animation": SubResource("Animation_gjfjd")
+}
+
+[node name="Warrior" instance=ExtResource("1_irwnv")]
+
+[node name="Texture" parent="." index="0"]
+position = Vector2(-6.9999995, -22)
+scale = Vector2(0.174, 0.174)
+texture = ExtResource("2_q5kha")
+hframes = 4
+
+[node name="Colision" parent="." index="1"]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_ku4f3")
+
+[node name="Animation" parent="." index="2"]
+libraries = {
+&"": SubResource("AnimationLibrary_a7ivg")
+}

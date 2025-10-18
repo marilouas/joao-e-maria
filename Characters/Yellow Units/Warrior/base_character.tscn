@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgcjt77revgdq"]
+
+[ext_resource type="Script" uid="uid://dyhe7506pc1rs" path="res://Characters/Yellow Units/Warrior/base_character.gd" id="1_4mt73"]
+
+[node name="BaseCharacter" type="CharacterBody2D" node_paths=PackedStringArray("_animation")]
+script = ExtResource("1_4mt73")
+_animation = NodePath("Animation")
+
+[node name="Texture" type="Sprite2D" parent="."]
+
+[node name="Colision" type="CollisionShape2D" parent="."]
+
+[node name="Animation" type="AnimationPlayer" parent="."]
