@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wmrxu7brg0e0"
-path="res://.godot/imported/Lancer_Run.png-673e25ce3eb90a746666ba5b492b5f0a.ctex"
+uid="uid://chxje7kdys3g2"
+path="res://.godot/imported/Warrior_Attack2.png-31301e2d0ccfdc0cfe880f91d5e36a33.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Yellow Units/Lancer/Lancer_Run.png"
-dest_files=["res://.godot/imported/Lancer_Run.png-673e25ce3eb90a746666ba5b492b5f0a.ctex"]
+source_file="res://Characters/Warrior/Warrior_Attack2.png"
+dest_files=["res://.godot/imported/Warrior_Attack2.png-31301e2d0ccfdc0cfe880f91d5e36a33.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dswgrc7ps1s5b"
-path="res://.godot/imported/Archer_Shoot.png-def210d1e0c5a742494636c244a988d7.ctex"
+uid="uid://d0kki041wb3st"
+path="res://.godot/imported/Warrior_Attack1.png-39ac1db394b70f508492a2127843fb26.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Yellow Units/Archer/Archer_Shoot.png"
-dest_files=["res://.godot/imported/Archer_Shoot.png-def210d1e0c5a742494636c244a988d7.ctex"]
+source_file="res://Characters/Warrior/Warrior_Attack1.png"
+dest_files=["res://.godot/imported/Warrior_Attack1.png-39ac1db394b70f508492a2127843fb26.ctex"]
 
 [params]
 

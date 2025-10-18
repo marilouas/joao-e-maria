@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://m00jrjiynkxa"]
 
-[ext_resource type="PackedScene" uid="uid://bgcjt77revgdq" path="res://Characters/Yellow Units/Warrior/base_character.tscn" id="1_irwnv"]
-[ext_resource type="Texture2D" uid="uid://4jtummnofmsx" path="res://Characters/Yellow Units/Warrior/Spritesheet.png" id="2_q5kha"]
+[ext_resource type="PackedScene" uid="uid://bgcjt77revgdq" path="res://Characters/Warrior/base_character.tscn" id="1_irwnv"]
+[ext_resource type="Texture2D" uid="uid://4jtummnofmsx" path="res://Characters/Warrior/Spritesheet.png" id="2_q5kha"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ku4f3"]
 radius = 3.0

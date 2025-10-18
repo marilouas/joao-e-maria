@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dr8phyfx8d2e2"
-path="res://.godot/imported/Lancer_Idle.png-64c689309a500ea9230b94881b72c274.ctex"
+uid="uid://bms6h1ap66rxj"
+path="res://.godot/imported/Warrior_Idle.png-295cfc61ad3abd5e0c190123d35c7e44.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Yellow Units/Lancer/Lancer_Idle.png"
-dest_files=["res://.godot/imported/Lancer_Idle.png-64c689309a500ea9230b94881b72c274.ctex"]
+source_file="res://Characters/Warrior/Warrior_Idle.png"
+dest_files=["res://.godot/imported/Warrior_Idle.png-295cfc61ad3abd5e0c190123d35c7e44.ctex"]
 
 [params]
 

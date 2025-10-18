@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4f0x3g6n4fnk"
-path="res://.godot/imported/Run.png-5c8481133b8e21e1de46e6b1373058c2.ctex"
+uid="uid://bwi8ybur3ajms"
+path="res://.godot/imported/Warrior_Run.png-c3cfdbf4eb17152483c906fadf64964d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Yellow Units/Monk/Run.png"
-dest_files=["res://.godot/imported/Run.png-5c8481133b8e21e1de46e6b1373058c2.ctex"]
+source_file="res://Characters/Warrior/Warrior_Run.png"
+dest_files=["res://.godot/imported/Warrior_Run.png-c3cfdbf4eb17152483c906fadf64964d.ctex"]
 
 [params]
 

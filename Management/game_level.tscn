@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://cw341t4orke0h"]
 
 [ext_resource type="PackedScene" uid="uid://bkaip0k1t2hvp" path="res://terrain_manager.tscn" id="1_8so7q"]
-[ext_resource type="PackedScene" uid="uid://m00jrjiynkxa" path="res://Characters/Yellow Units/Warrior/warrior.tscn" id="2_debnr"]
+[ext_resource type="PackedScene" uid="uid://m00jrjiynkxa" path="res://Characters/Warrior/warrior.tscn" id="2_debnr"]
 [ext_resource type="Script" uid="uid://dss007dpl1bmm" path="res://Management/camera_2d.gd" id="3_55t7r"]
-[ext_resource type="PackedScene" uid="uid://dsdiknpbmp05u" path="res://Characters/Item/item.tscn" id="3_co76o"]
+[ext_resource type="PackedScene" uid="uid://dsdiknpbmp05u" path="res://Item/item.tscn" id="3_co76o"]
 [ext_resource type="PackedScene" uid="uid://bxki4tmu3aj1s" path="res://Characters/Npc/Npc.tscn" id="3_debnr"]
 [ext_resource type="Script" uid="uid://dky64o0u6qfjs" path="res://Management/zoom_out.gd" id="5_qugfg"]
 
