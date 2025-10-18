@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://cw341t4orke0h"]
+
+[ext_resource type="PackedScene" uid="uid://bkaip0k1t2hvp" path="res://terrain_manager.tscn" id="1_8so7q"]
+[ext_resource type="Script" uid="uid://bfr8iw7f8grlv" path="res://Camera/camera_zoom.gd" id="1_55t7r"]
+[ext_resource type="PackedScene" uid="uid://m00jrjiynkxa" path="res://Characters/Yellow Units/Warrior/warrior.tscn" id="2_debnr"]
+[ext_resource type="Script" uid="uid://di5oi7vhvble2" path="res://Camera/zoom_out_area.gd" id="4_qugfg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8so7q"]
+size = Vector2(94, 321)
+
+[node name="GameLevel" type="Node2D"]
+
+[node name="Warrior" parent="." instance=ExtResource("2_debnr")]
+top_level = true
+z_index = 1
+position = Vector2(400, 260)
+
+[node name="Camera2D" type="Camera2D" parent="Warrior"]
+limit_left = 0
+limit_top = 0
+limit_right = 1280
+limit_bottom = 704
+limit_smoothed = true
+rotation_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+script = ExtResource("1_55t7r")
+
+[node name="TerrainManager" parent="." instance=ExtResource("1_8so7q")]
+
+[node name="Warrior" parent="TerrainManager" instance=ExtResource("2_debnr")]
+visible = false
+
+[node name="ZoomOut_Area" type="Area2D" parent="." node_paths=PackedStringArray("camera")]
+position = Vector2(978, 472)
+script = ExtResource("4_qugfg")
+camera = NodePath("../Warrior/Camera2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZoomOut_Area"]
+position = Vector2(-51, 7.5)
+shape = SubResource("RectangleShape2D_8so7q")

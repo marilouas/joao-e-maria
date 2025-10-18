@@ -1,0 +1,156 @@
+[gd_scene load_steps=7 format=3 uid="uid://b54qt15tmj0oc"]
+
+[ext_resource type="Texture2D" uid="uid://2sqff52aa5e0" path="res://Menu/31feadfcf748a89598df1f040959a204.jpg" id="1_ihied"]
+[ext_resource type="Script" uid="uid://b6jsyqdpsrk7l" path="res://Menu/menu.gd" id="1_raj00"]
+[ext_resource type="Texture2D" uid="uid://c5mh2we7c8732" path="res://Menu/5fa406e699a75d9871814d8b04e01521.jpg" id="2_raj00"]
+
+[sub_resource type="Animation" id="Animation_raj00"]
+resource_name = "Menu"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-300, 0), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8w4re"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ofseh"]
+_data = {
+&"Menu": SubResource("Animation_raj00"),
+&"RESET": SubResource("Animation_8w4re")
+}
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_raj00")
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 648.0
+texture = ExtResource("1_ihied")
+expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="logo" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_raj00")
+
+[node name="start_btn" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "START"
+
+[node name="credit_btn" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "CREDITS"
+
+[node name="quit_btn" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "QUIT"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_top = 2.0
+offset_right = 1283.0
+offset_bottom = 646.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ofseh")
+}
+autoplay = "Menu"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/start_btn" to="." method="_on_start_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/credit_btn" to="." method="_on_credit_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/quit_btn" to="." method="_on_quit_btn_pressed"]
