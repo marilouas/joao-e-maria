@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Tiny Swords by Pixel Frog"
-run/main_scene="uid://cw341t4orke0h"
+config/name="João e Maria"
+run/main_scene="uid://dpvljubuatjyk"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
