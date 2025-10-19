@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5mh2we7c8732"
-path="res://.godot/imported/5fa406e699a75d9871814d8b04e01521.jpg-d1428bfe2e4796fea52facce735f5d2a.ctex"
+uid="uid://b8mc2ssvbq35g"
+path="res://.godot/imported/Logo Maria e Joao alta.png-8b82aaa586a1932f8240a0ffbc47b941.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Menu/5fa406e699a75d9871814d8b04e01521.jpg"
-dest_files=["res://.godot/imported/5fa406e699a75d9871814d8b04e01521.jpg-d1428bfe2e4796fea52facce735f5d2a.ctex"]
+source_file="res://Menu/Logo Maria e Joao alta.png"
+dest_files=["res://.godot/imported/Logo Maria e Joao alta.png-8b82aaa586a1932f8240a0ffbc47b941.ctex"]
 
 [params]
 

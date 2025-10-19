@@ -1,0 +1,23 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://bnvpj2puxm30y"]
+
+[ext_resource type="FontFile" uid="uid://dephvlhq2oo6k" path="res://Fonts/BarlowCondensed-Bold.ttf" id="1_2c5sr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w6voe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eafcm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ofseh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tf6kh"]
+
+[resource]
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_focus_color = Color(0.6745098, 0.27058825, 0.23921569, 1)
+Button/colors/font_hover_color = Color(0.67515206, 0.27179262, 0.24070922, 1)
+Button/colors/font_pressed_color = Color(0.3649827, 0.21000016, 0.20677593, 1)
+Button/font_sizes/font_size = 60
+Button/fonts/font = ExtResource("1_2c5sr")
+Button/styles/focus = SubResource("StyleBoxEmpty_w6voe")
+Button/styles/hover = SubResource("StyleBoxEmpty_eafcm")
+Button/styles/normal = SubResource("StyleBoxEmpty_ofseh")
+Button/styles/pressed = SubResource("StyleBoxEmpty_tf6kh")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsap4xn7pkk82"
-path="res://.godot/imported/ADJOGOS.png-6e73469466f1003cd65bd6cbc64ac366.ctex"
+uid="uid://badskf3vfdsmx"
+path="res://.godot/imported/TinyTrash.png-edc9940363f8e58fc4aa0284615140b8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Intro/ADJOGOS.png"
-dest_files=["res://.godot/imported/ADJOGOS.png-6e73469466f1003cd65bd6cbc64ac366.ctex"]
+source_file="res://Menu/TinyTrash.png"
+dest_files=["res://.godot/imported/TinyTrash.png-edc9940363f8e58fc4aa0284615140b8.ctex"]
 
 [params]
 
