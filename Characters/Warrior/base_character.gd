@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name BaseCharacter
 
-@export var _move_speed: float = 128.0
+@export var _move_speed: float = 96.0
 @export var _animation: AnimatedSprite2D
 
 var last_direction := "down"  # guarda a última direção para o idle correto

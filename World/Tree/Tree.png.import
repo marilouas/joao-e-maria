@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0u4jjcs07qmf"
-path="res://.godot/imported/Water Background color.png-ef1b470220740a602c87b49296b103c1.ctex"
+uid="uid://dagevdxflytai"
+path="res://.godot/imported/Tree.png-5b01572d0448481e56847d879d94cae9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Terrain/Water Background color.png"
-dest_files=["res://.godot/imported/Water Background color.png-ef1b470220740a602c87b49296b103c1.ctex"]
+source_file="res://World/Tree/Tree.png"
+dest_files=["res://.godot/imported/Tree.png-5b01572d0448481e56847d879d94cae9.ctex"]
 
 [params]
 

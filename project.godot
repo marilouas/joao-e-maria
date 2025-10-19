@@ -23,6 +23,10 @@ window/size/viewport_width=1280
 
 import/reimport_missing_imported_files=false
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/anthonyec.camera_preview/plugin.cfg")
+
 [input]
 
 move_left={

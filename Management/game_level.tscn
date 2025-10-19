@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cw341t4orke0h"]
+[gd_scene load_steps=12 format=3 uid="uid://cw341t4orke0h"]
 
 [ext_resource type="PackedScene" uid="uid://bkaip0k1t2hvp" path="res://terrain_manager.tscn" id="1_8so7q"]
 [ext_resource type="PackedScene" uid="uid://m00jrjiynkxa" path="res://Characters/Warrior/warrior.tscn" id="2_debnr"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dsdiknpbmp05u" path="res://Item/item.tscn" id="3_co76o"]
 [ext_resource type="PackedScene" uid="uid://bxki4tmu3aj1s" path="res://Characters/Npc/Npc.tscn" id="3_debnr"]
 [ext_resource type="Script" uid="uid://dky64o0u6qfjs" path="res://Management/zoom_out.gd" id="5_qugfg"]
+[ext_resource type="PackedScene" uid="uid://cs4p3j61ve00g" path="res://World/Tree/tree.tscn" id="7_m8gmb"]
+[ext_resource type="PackedScene" uid="uid://clbb1owvrclpq" path="res://World/Bench/bench.tscn" id="8_p8jwk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qugfg"]
 size = Vector2(205, 160)
@@ -66,3 +68,33 @@ libraries = {
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(638, 345)
+
+[node name="Tree" parent="." instance=ExtResource("7_m8gmb")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(359, 163)
+
+[node name="Tree2" parent="." instance=ExtResource("7_m8gmb")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(901, 59)
+
+[node name="Tree3" parent="." instance=ExtResource("7_m8gmb")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(826, 604)
+
+[node name="Tree4" parent="." instance=ExtResource("7_m8gmb")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(175, 481)
+
+[node name="Tree5" parent="." instance=ExtResource("7_m8gmb")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(1149, 158)
+
+[node name="Bench" parent="." instance=ExtResource("8_p8jwk")]
+z_index = 4
+y_sort_enabled = true
+position = Vector2(634, 33)
