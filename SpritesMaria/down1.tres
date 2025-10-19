@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://11ub7ug05muh"]
+
+[ext_resource type="Texture2D" uid="uid://det51l2jvioi2" path="res://MARIA_andar_baixo.png" id="1_gyauo"]
+
+[resource]
+atlas = ExtResource("1_gyauo")
+region = Rect2(696, 29, 105, 226)

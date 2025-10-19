@@ -1,11 +1,14 @@
 extends StaticBody2D
 class_name Npc
 
+@export var character_name: String = "Creeper" # 🧩 Nome configurável do personagem
+
 @onready var interactionlabel: Label = $Area2D/InteractionLabel
 @onready var dialogue_box: Label = $Area2D/CanvasLayer/DialogueBox
 @onready var dialogue_text: Label = $Area2D/CanvasLayer/DialogueText
 @onready var creeper: Sprite2D = $Area2D/CanvasLayer/creeper
 @onready var shadowbox: Sprite2D = $Area2D/CanvasLayer/shadowbox
+@onready var name_character: Label = $Area2D/CanvasLayer/NameCharacter
 
 var _character_ref: BaseCharacter = null
 var talking = false
@@ -26,6 +29,7 @@ var lines = [
 func _ready() -> void:
 	dialogue_box.visible = false
 	dialogue_text.visible = false
+	name_character.visible = false
 	interactionlabel.visible = false
 	creeper.visible = false
 	shadowbox.visible = false
@@ -36,7 +40,6 @@ func _on_area_2d_body_entered(_body: Node2D) -> void:
 		_character_ref = _body
 		interactionlabel.text = "[E]"
 		interactionlabel.visible = true
-	print(_body)
 
 
 func _on_area_2d_body_exited(_body: Node2D) -> void:
@@ -51,7 +54,6 @@ func _process(delta: float) -> void:
 		start_dialogue()
 	elif talking:
 		if showing_text and Input.is_action_just_pressed("interact"):
-			# Solicita pular a animação
 			skip_text = true
 		elif keep_going and Input.is_action_just_pressed("interact"):
 			next_line()
@@ -62,8 +64,11 @@ func start_dialogue():
 	interactionlabel.visible = false
 	dialogue_box.visible = true
 	dialogue_text.visible = true
+	name_character.visible = true
 	creeper.visible = true
 	shadowbox.visible = true
+	
+	name_character.text = character_name # 🧩 Mostra o nome do personagem
 	index_line = 0
 	next_line()
 
@@ -100,5 +105,6 @@ func end_dialogue():
 	skip_text = false
 	dialogue_box.visible = false
 	dialogue_text.visible = false
+	name_character.visible = false
 	creeper.visible = false
 	shadowbox.visible = false

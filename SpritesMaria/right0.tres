@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://b5qp4wlp0gl8k"]
+
+[ext_resource type="Texture2D" uid="uid://doqqv8ebspni5" path="res://MARIA_andar_direita.png" id="1_xlh0e"]
+
+[resource]
+atlas = ExtResource("1_xlh0e")
+region = Rect2(300, 0, 300, 300)

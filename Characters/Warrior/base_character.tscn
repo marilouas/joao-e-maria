@@ -4,10 +4,8 @@
 
 [node name="BaseCharacter" type="CharacterBody2D" node_paths=PackedStringArray("_animation")]
 script = ExtResource("1_4mt73")
-_animation = NodePath("Animation")
-
-[node name="Texture" type="Sprite2D" parent="."]
+_animation = NodePath("AnimatedSprite2D")
 
 [node name="Colision" type="CollisionShape2D" parent="."]
 
-[node name="Animation" type="AnimationPlayer" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

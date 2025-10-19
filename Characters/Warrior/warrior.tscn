@@ -1,74 +1,127 @@
-[gd_scene load_steps=9 format=3 uid="uid://m00jrjiynkxa"]
+[gd_scene load_steps=20 format=3 uid="uid://m00jrjiynkxa"]
 
 [ext_resource type="PackedScene" uid="uid://bgcjt77revgdq" path="res://Characters/Warrior/base_character.tscn" id="1_irwnv"]
-[ext_resource type="Texture2D" uid="uid://4jtummnofmsx" path="res://Characters/Warrior/Spritesheet.png" id="2_q5kha"]
+[ext_resource type="Texture2D" uid="uid://kjnet8bybtp3" path="res://SpritesMaria/idle0.tres" id="2_8erid"]
+[ext_resource type="Texture2D" uid="uid://dvfp6lgoqgu2k" path="res://SpritesMaria/idleleft0.tres" id="3_va6qd"]
+[ext_resource type="Texture2D" uid="uid://diqlu7newvvwr" path="res://SpritesMaria/down0.tres" id="4_1bc58"]
+[ext_resource type="Texture2D" uid="uid://cigav3e7d0t8o" path="res://SpritesMaria/idleright.tres" id="4_6dsf7"]
+[ext_resource type="Texture2D" uid="uid://11ub7ug05muh" path="res://SpritesMaria/down1.tres" id="5_oesi0"]
+[ext_resource type="Texture2D" uid="uid://dv531lhwdq0px" path="res://SpritesMaria/idleup.tres" id="5_yr40i"]
+[ext_resource type="Texture2D" uid="uid://b5qp4wlp0gl8k" path="res://SpritesMaria/right0.tres" id="6_5tf2f"]
+[ext_resource type="Texture2D" uid="uid://c3ynkcj77yrrn" path="res://SpritesMaria/right1.tres" id="7_tdoxt"]
+[ext_resource type="Texture2D" uid="uid://cufk00k6bd8hr" path="res://SpritesMaria/left0.tres" id="8_l8jua"]
+[ext_resource type="Texture2D" uid="uid://fjrdf8b7tsoq" path="res://SpritesMaria/right2.tres" id="8_va6qd"]
+[ext_resource type="Texture2D" uid="uid://dkqrutyo56wuk" path="res://SpritesMaria/right3.tres" id="9_6dsf7"]
+[ext_resource type="Texture2D" uid="uid://dja1sw5yfyynh" path="res://SpritesMaria/left1.tres" id="9_sa7dw"]
+[ext_resource type="Texture2D" uid="uid://jc25tt6y0o0y" path="res://SpritesMaria/left2.tres" id="10_31jkr"]
+[ext_resource type="Texture2D" uid="uid://dgtugohreprmq" path="res://SpritesMaria/left3.tres" id="11_ug6tw"]
+[ext_resource type="Texture2D" uid="uid://bwkpgxiundh35" path="res://SpritesMaria/up0.tres" id="16_l8jua"]
+[ext_resource type="Texture2D" uid="uid://bm5ex8uqdra1y" path="res://SpritesMaria/up1.tres" id="17_sa7dw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ku4f3"]
 radius = 3.0
-height = 22.0
+height = 16.0
 
-[sub_resource type="Animation" id="Animation_ku4f3"]
-length = 0.001
-step = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Texture:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
+[sub_resource type="SpriteFrames" id="SpriteFrames_8l81o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8erid")
+}],
+"loop": false,
+"name": &"idle_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_va6qd")
+}],
+"loop": false,
+"name": &"idle_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_6dsf7")
+}],
+"loop": false,
+"name": &"idle_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_yr40i")
+}],
+"loop": false,
+"name": &"idle_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.5,
+"texture": ExtResource("4_1bc58")
+}, {
+"duration": 0.5,
+"texture": ExtResource("5_oesi0")
+}],
+"loop": false,
+"name": &"move_down",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 0.25,
+"texture": ExtResource("8_l8jua")
+}, {
+"duration": 0.25,
+"texture": ExtResource("9_sa7dw")
+}, {
+"duration": 0.25,
+"texture": ExtResource("10_31jkr")
+}, {
+"duration": 0.25,
+"texture": ExtResource("11_ug6tw")
+}],
+"loop": false,
+"name": &"move_left",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 0.25,
+"texture": ExtResource("6_5tf2f")
+}, {
+"duration": 0.25,
+"texture": ExtResource("7_tdoxt")
+}, {
+"duration": 0.25,
+"texture": ExtResource("8_va6qd")
+}, {
+"duration": 0.25,
+"texture": ExtResource("9_6dsf7")
+}],
+"loop": false,
+"name": &"move_right",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 0.5,
+"texture": ExtResource("16_l8jua")
+}, {
+"duration": 0.5,
+"texture": ExtResource("17_sa7dw")
+}],
+"loop": false,
+"name": &"move_up",
+"speed": 1.0
+}]
 
-[sub_resource type="Animation" id="Animation_q5kha"]
-resource_name = "Run"
-step = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Texture:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
+[node name="Maria" instance=ExtResource("1_irwnv")]
 
-[sub_resource type="Animation" id="Animation_a7ivg"]
-resource_name = "correr"
-length = 2.0
-step = 0.5
-
-[sub_resource type="Animation" id="Animation_gjfjd"]
-resource_name = "new_animation"
-step = 0.5
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_a7ivg"]
-_data = {
-&"RESET": SubResource("Animation_ku4f3"),
-&"Run": SubResource("Animation_q5kha"),
-&"correr": SubResource("Animation_a7ivg"),
-&"new_animation": SubResource("Animation_gjfjd")
-}
-
-[node name="Warrior" instance=ExtResource("1_irwnv")]
-
-[node name="Texture" parent="." index="0"]
-position = Vector2(-6.9999995, -22)
-scale = Vector2(0.174, 0.174)
-texture = ExtResource("2_q5kha")
-hframes = 4
-
-[node name="Colision" parent="." index="1"]
+[node name="Colision" parent="." index="0"]
+show_behind_parent = true
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_ku4f3")
 
-[node name="Animation" parent="." index="2"]
-libraries = {
-&"": SubResource("AnimationLibrary_a7ivg")
-}
+[node name="AnimatedSprite2D" parent="." index="1"]
+position = Vector2(0, -21)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_8l81o")
+animation = &"move_down"

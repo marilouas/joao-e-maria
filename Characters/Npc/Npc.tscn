@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dsscj83g812ca" path="res://Characters/Npc/kirby_idle.png" id="1_6jogw"]
 [ext_resource type="Script" uid="uid://bdty1tcvgy4ke" path="res://Characters/Npc/Npc.gd" id="1_f4i7g"]
-[ext_resource type="Texture2D" uid="uid://begtcjkl6tjrw" path="res://Management/dialoguebox/creepersprite.png" id="3_xbboc"]
+[ext_resource type="Texture2D" uid="uid://xnkcx6wj3855" path="res://Management/dialoguebox/creeper.png" id="3_nsmq5"]
 [ext_resource type="Texture2D" uid="uid://bttimkhxhx6ve" path="res://Management/dialoguebox/png fundo transparente.png" id="4_nsmq5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6jogw"]
@@ -103,21 +103,26 @@ autowrap_mode = 2
 
 [node name="DialogueText" type="Label" parent="Area2D/CanvasLayer"]
 z_index = 1
-offset_left = 340.0
+offset_left = 262.0
 offset_top = 486.0
-offset_right = 980.0
+offset_right = 902.0
 offset_bottom = 648.0
 autowrap_mode = 2
 
 [node name="creeper" type="Sprite2D" parent="Area2D/CanvasLayer"]
-z_index = -1
-position = Vector2(1082, 419)
-scale = Vector2(0.404, 0.40399998)
-texture = ExtResource("3_xbboc")
+position = Vector2(885.8201, 394.375)
+texture = ExtResource("3_nsmq5")
 
 [node name="shadowbox" type="Sprite2D" parent="Area2D/CanvasLayer"]
 position = Vector2(640, 523)
 texture = ExtResource("4_nsmq5")
+
+[node name="NameCharacter" type="Label" parent="Area2D/CanvasLayer"]
+offset_left = 62.0
+offset_top = 448.0
+offset_right = 279.0
+offset_bottom = 497.0
+theme_override_font_sizes/font_size = 26
 
 [node name="InteractionLabel" type="Label" parent="Area2D"]
 offset_left = -4.0
