@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chxje7kdys3g2"
-path="res://.godot/imported/Warrior_Attack2.png-31301e2d0ccfdc0cfe880f91d5e36a33.ctex"
+uid="uid://bwi8ybur3ajms"
+path="res://.godot/imported/Warrior_Run.png-a5b10a9d41ac4e1f4f6ebef96b4ab646.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Warrior/Warrior_Attack2.png"
-dest_files=["res://.godot/imported/Warrior_Attack2.png-31301e2d0ccfdc0cfe880f91d5e36a33.ctex"]
+source_file="res://Characters/Maria/Warrior_Run.png"
+dest_files=["res://.godot/imported/Warrior_Run.png-a5b10a9d41ac4e1f4f6ebef96b4ab646.ctex"]
 
 [params]
 

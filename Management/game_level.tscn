@@ -1,16 +1,20 @@
-[gd_scene load_steps=12 format=3 uid="uid://cw341t4orke0h"]
+[gd_scene load_steps=16 format=3 uid="uid://cw341t4orke0h"]
 
 [ext_resource type="PackedScene" uid="uid://bkaip0k1t2hvp" path="res://terrain_manager.tscn" id="1_8so7q"]
-[ext_resource type="PackedScene" uid="uid://m00jrjiynkxa" path="res://Characters/Warrior/warrior.tscn" id="2_debnr"]
+[ext_resource type="PackedScene" uid="uid://m00jrjiynkxa" path="res://Characters/Maria/warrior.tscn" id="2_debnr"]
 [ext_resource type="Script" uid="uid://dss007dpl1bmm" path="res://Management/camera_2d.gd" id="3_55t7r"]
 [ext_resource type="PackedScene" uid="uid://dsdiknpbmp05u" path="res://Item/item.tscn" id="3_co76o"]
 [ext_resource type="PackedScene" uid="uid://bxki4tmu3aj1s" path="res://Characters/Npc/Npc.tscn" id="3_debnr"]
 [ext_resource type="Script" uid="uid://dky64o0u6qfjs" path="res://Management/zoom_out.gd" id="5_qugfg"]
 [ext_resource type="PackedScene" uid="uid://cs4p3j61ve00g" path="res://World/Tree/tree.tscn" id="7_m8gmb"]
+[ext_resource type="PackedScene" uid="uid://ndcdul2pulr5" path="res://World/Fountain/fountain.tscn" id="8_5m0y5"]
 [ext_resource type="PackedScene" uid="uid://clbb1owvrclpq" path="res://World/Bench/bench.tscn" id="8_p8jwk"]
+[ext_resource type="PackedScene" uid="uid://cubodg1dm7o6" path="res://World/Slide/slide.tscn" id="9_c8k8p"]
+[ext_resource type="PackedScene" uid="uid://co0nptq6yhfrb" path="res://Characters/Dad/dad.tscn" id="11_5q5c1"]
+[ext_resource type="PackedScene" uid="uid://dxqa70iskpu60" path="res://Evento/evento1.tscn" id="12_olubs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qugfg"]
-size = Vector2(205, 160)
+size = Vector2(173.5, 134)
 
 [sub_resource type="Animation" id="Animation_co76o"]
 resource_name = "intro"
@@ -39,7 +43,8 @@ zoom_out = Vector2(3, 3)
 [node name="TerrainManager" parent="." instance=ExtResource("1_8so7q")]
 
 [node name="Kirby" parent="." instance=ExtResource("3_debnr")]
-position = Vector2(394, 559)
+position = Vector2(-77.000046, 559)
+rotation = 1.9487002
 scale = Vector2(0.9935759, 0.9900023)
 
 [node name="ZoomOut" type="Area2D" parent="." node_paths=PackedStringArray("camera")]
@@ -51,14 +56,14 @@ position = Vector2(417.5, 545)
 shape = SubResource("RectangleShape2D_qugfg")
 
 [node name="Item" parent="." instance=ExtResource("3_co76o")]
-position = Vector2(750, 253)
+position = Vector2(114, 243)
 
 [node name="ZoomOut2" type="Area2D" parent="." node_paths=PackedStringArray("camera")]
 script = ExtResource("5_qugfg")
 camera = NodePath("../Warrior/Camera2D")
 
 [node name="Colision" type="CollisionShape2D" parent="ZoomOut2"]
-position = Vector2(760, 229)
+position = Vector2(635, 12)
 shape = SubResource("RectangleShape2D_qugfg")
 
 [node name="Cutscene" type="AnimationPlayer" parent="."]
@@ -68,6 +73,7 @@ libraries = {
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(638, 345)
+zoom = Vector2(2, 2)
 
 [node name="Tree" parent="." instance=ExtResource("7_m8gmb")]
 z_index = 2
@@ -98,3 +104,18 @@ position = Vector2(1149, 158)
 z_index = 4
 y_sort_enabled = true
 position = Vector2(634, 33)
+
+[node name="Slide" parent="." instance=ExtResource("9_c8k8p")]
+z_index = 4
+y_sort_enabled = true
+position = Vector2(650, 175)
+
+[node name="Dad" parent="." instance=ExtResource("11_5q5c1")]
+position = Vector2(626, 34)
+
+[node name="Evento1" parent="." instance=ExtResource("12_olubs")]
+z_index = 1
+position = Vector2(698, -125)
+
+[node name="Fountain" parent="." instance=ExtResource("8_5m0y5")]
+position = Vector2(317, -112)

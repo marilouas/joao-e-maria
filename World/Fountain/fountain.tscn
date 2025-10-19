@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://ndcdul2pulr5"]
+
+[ext_resource type="Texture2D" uid="uid://icakbpuycw4p" path="res://World/Fountain/Fountain.png" id="1_gny83"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gocgn"]
+radius = 36.0
+height = 162.0
+
+[node name="Fountain" type="StaticBody2D"]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(-1, -43)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -4)
+scale = Vector2(0.6028646, 0.6028646)
+texture = ExtResource("1_gny83")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, 49)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_gocgn")

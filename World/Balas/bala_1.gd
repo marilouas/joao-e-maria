@@ -1,14 +1,12 @@
 extends StaticBody2D
-class_name Dad
+class_name Bala1
 
-@export var character_name: String = "Creeper" # 🧩 Nome configurável do personagem
+@onready var dialogue_text_bala: Label = $Area2D/CanvasLayer/DialogueTextBala
+@onready var dialogue_box: Sprite2D = $Area2D/CanvasLayer/DialogueBox
+@onready var blurred_background_bala: Label = $Area2D/CanvasLayer/BlurredBackgroundBala
+@onready var sprite_2d_bala: Sprite2D = $Area2D/CanvasLayer/Sprite2DBala
+@onready var interaction_label_bala: Label = $InteractionLabelBala
 
-@onready var interactionlabel: Label = $Area2D/InteractionLabel
-@onready var dialogue_box: Label = $Area2D/CanvasLayer/DialogueBox
-@onready var dialogue_text: Label = $Area2D/CanvasLayer/DialogueText
-@onready var creeper: Sprite2D = $Area2D/CanvasLayer/creeper
-@onready var shadowbox: Sprite2D = $Area2D/CanvasLayer/shadowbox
-@onready var name_character: Label = $Area2D/CanvasLayer/NameCharacter
 
 var _character_ref: BaseCharacter = null
 var talking = false
@@ -19,35 +17,30 @@ var skip_text = false
 var index_line = 0
 
 var lines = [
-	{"name": "Pai", "text": "..."},
-	{"name": "Maria", "text": "Ei pai!"},
-	{"name": "Pai", "text": "..."}
+	"SPRITE!",
+	"SPRITE SPRITE!!",
+	"SPRITE SPRITE SPRITE!!!",
+	"SPRITE SPRITE SPRITE SPRITE SPRITE!!!!",
+	"SPRITE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 ]
 
-
 func _ready() -> void:
-	print("pai", creeper)
-	
 	dialogue_box.visible = false
 	dialogue_text.visible = false
-	name_character.visible = false
-	interactionlabel.visible = false
-	creeper.visible = false
-	shadowbox.visible = false
-
-
+	interaction_label.visible = false
+	sprite_2d.visible = false
+	blurred_background.visible = false
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
 	if _body is BaseCharacter:
 		_character_ref = _body
-		interactionlabel.text = "[E]"
-		interactionlabel.visible = true
-
+		interaction_label.text = "[E]"
+		interaction_label.visible = true
+	print(_body)
 
 func _on_area_2d_body_exited(_body: Node2D) -> void:
-	
 	_character_ref = null
-	interactionlabel.visible = false
+	interaction_label.visible = false
 	if talking:
 		end_dialogue()
 
@@ -57,6 +50,7 @@ func _process(delta: float) -> void:
 		start_dialogue()
 	elif talking:
 		if showing_text and Input.is_action_just_pressed("interact"):
+			# Solicita pular a animação
 			skip_text = true
 		elif keep_going and Input.is_action_just_pressed("interact"):
 			next_line()
@@ -64,14 +58,11 @@ func _process(delta: float) -> void:
 
 func start_dialogue():
 	talking = true
-	interactionlabel.visible = false
+	interaction_label.visible = false
 	dialogue_box.visible = true
 	dialogue_text.visible = true
-	name_character.visible = true
-	creeper.visible = true
-	shadowbox.visible = true
-	
-	name_character.text = character_name # 🧩 Mostra o nome do personagem
+	sprite_2d.visible = true
+	blurred_background.visible = true
 	index_line = 0
 	next_line()
 
@@ -80,20 +71,11 @@ func next_line():
 	if index_line < lines.size():
 		keep_going = false
 		dialogue_text.text = ""
-
-		# Pegamos o dicionário da linha atual
-		var current_line = lines[index_line]
+		current_text = lines[index_line]
 		index_line += 1
-
-		# Define o nome de quem está falando
-		if current_line.has("name"):
-			name_character.text = current_line["name"]
-
-		# Mostra o texto com o efeito de digitação
-		await show_text_with_effect(current_line["text"])
+		await show_text_with_effect(current_text)
 	else:
 		end_dialogue()
-
 
 
 func show_text_with_effect(text: String) -> void:
@@ -117,6 +99,5 @@ func end_dialogue():
 	skip_text = false
 	dialogue_box.visible = false
 	dialogue_text.visible = false
-	name_character.visible = false
-	creeper.visible = false
-	shadowbox.visible = false
+	sprite_2d.visible = false
+	blurred_background.visible = false

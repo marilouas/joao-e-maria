@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3 uid="uid://dxqa70iskpu60"]
+
+[ext_resource type="Script" uid="uid://b3v6h0tq6m5fs" path="res://Evento/evento_1.gd" id="1_2haym"]
+[ext_resource type="Texture2D" uid="uid://xnkcx6wj3855" path="res://Management/dialoguebox/creeper.png" id="2_37e4t"]
+[ext_resource type="Texture2D" uid="uid://bttimkhxhx6ve" path="res://Management/dialoguebox/png fundo transparente.png" id="3_y0wmq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2haym"]
+size = Vector2(360, 241)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f4i7g"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xbboc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pja81"]
+font_size = 10
+
+[node name="Evento1" type="StaticBody2D"]
+script = ExtResource("1_2haym")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 9
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -120)
+shape = SubResource("RectangleShape2D_2haym")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Area2D"]
+
+[node name="Timer" type="Timer" parent="Area2D/CanvasLayer"]
+
+[node name="DialogueBox" type="Label" parent="Area2D/CanvasLayer"]
+offset_top = 486.0
+offset_right = 1280.0
+offset_bottom = 648.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_f4i7g")
+label_settings = SubResource("LabelSettings_xbboc")
+autowrap_mode = 2
+
+[node name="DialogueText" type="Label" parent="Area2D/CanvasLayer"]
+z_index = 1
+offset_left = 262.0
+offset_top = 486.0
+offset_right = 902.0
+offset_bottom = 648.0
+autowrap_mode = 2
+
+[node name="creeper" type="Sprite2D" parent="Area2D/CanvasLayer"]
+position = Vector2(885.8201, 394.375)
+texture = ExtResource("2_37e4t")
+
+[node name="shadowbox" type="Sprite2D" parent="Area2D/CanvasLayer"]
+position = Vector2(640, 523)
+texture = ExtResource("3_y0wmq")
+
+[node name="NameCharacter" type="Label" parent="Area2D/CanvasLayer"]
+offset_left = 62.0
+offset_top = 448.0
+offset_right = 279.0
+offset_bottom = 497.0
+theme_override_font_sizes/font_size = 26
+
+[node name="InteractionLabel" type="Label" parent="Area2D"]
+offset_left = -4.0
+offset_top = -59.0
+offset_right = 45.0
+offset_bottom = -36.0
+text = "POYO!"
+label_settings = SubResource("LabelSettings_pja81")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

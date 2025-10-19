@@ -1,0 +1,100 @@
+[gd_scene load_steps=10 format=3 uid="uid://co0nptq6yhfrb"]
+
+[ext_resource type="Script" uid="uid://bdty1tcvgy4ke" path="res://Characters/Npc/Npc.gd" id="1_panmq"]
+[ext_resource type="Texture2D" uid="uid://chvfatg2tpmpr" path="res://Characters/Dad/Dad.png" id="2_0xqhd"]
+[ext_resource type="Texture2D" uid="uid://gbbm3y1x87s5" path="res://Characters/Dad/DadSprite.png" id="3_panmq"]
+[ext_resource type="Texture2D" uid="uid://bttimkhxhx6ve" path="res://Management/dialoguebox/png fundo transparente.png" id="4_j85nm"]
+[ext_resource type="PackedScene" uid="uid://dw8xprf6hev6b" path="res://UI/DialogueBox.tscn" id="5_0xqhd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xbboc"]
+radius = 121.0661
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f4i7g"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xbboc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pja81"]
+font_size = 10
+
+[node name="Dad" type="StaticBody2D"]
+script = ExtResource("1_panmq")
+
+[node name="Texture" type="Sprite2D" parent="."]
+z_index = 4
+position = Vector2(0, -30.000011)
+scale = Vector2(0.2538889, 0.2538889)
+texture = ExtResource("2_0xqhd")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 9
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
+position = Vector2(-3, -41)
+shape = SubResource("CircleShape2D_xbboc")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Area2D"]
+
+[node name="Timer" type="Timer" parent="Area2D/CanvasLayer"]
+
+[node name="DialogueBox" type="Label" parent="Area2D/CanvasLayer"]
+offset_top = 486.0
+offset_right = 1280.0
+offset_bottom = 648.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_f4i7g")
+label_settings = SubResource("LabelSettings_xbboc")
+autowrap_mode = 2
+
+[node name="DialogueText" type="Label" parent="Area2D/CanvasLayer"]
+z_index = 1
+offset_left = 190.0
+offset_top = 486.0
+offset_right = 817.0
+offset_bottom = 620.0
+autowrap_mode = 2
+
+[node name="creeper" type="Sprite2D" parent="Area2D/CanvasLayer"]
+position = Vector2(917, 399)
+texture = ExtResource("3_panmq")
+
+[node name="shadowbox" type="Sprite2D" parent="Area2D/CanvasLayer"]
+position = Vector2(640, 524)
+texture = ExtResource("4_j85nm")
+
+[node name="NameCharacter" type="Label" parent="Area2D/CanvasLayer"]
+offset_left = 62.0
+offset_top = 448.0
+offset_right = 303.0
+offset_bottom = 510.0
+theme_override_font_sizes/font_size = 26
+
+[node name="InteractionLabel" type="Label" parent="Area2D"]
+offset_left = -4.0
+offset_top = -59.0
+offset_right = 45.0
+offset_bottom = -36.0
+text = "POYO!"
+label_settings = SubResource("LabelSettings_pja81")
+
+[node name="DialogueBox" parent="." instance=ExtResource("5_0xqhd")]
+
+[node name="Panel2" type="Panel" parent="DialogueBox"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NameLabel" type="Label" parent="DialogueBox/Panel2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="TextLabel" type="Label" parent="DialogueBox/Panel2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="dialogue_finished" from="DialogueBox" to="." method="_on_dialogue_box_dialogue_finished"]

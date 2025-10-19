@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=3 uid="uid://w3tsyob7t3dm"]
+
+[ext_resource type="Script" uid="uid://ix0vn883hdi7" path="res://bala1.gd" id="1_8osjy"]
+[ext_resource type="Texture2D" uid="uid://cfx8gwwqtd3wl" path="res://World/Balas/bala 1 ing.png" id="2_6mey3"]
+[ext_resource type="Texture2D" uid="uid://bttimkhxhx6ve" path="res://Management/dialoguebox/png fundo transparente.png" id="3_3wpbs"]
+[ext_resource type="Texture2D" uid="uid://cupix8sfpn550" path="res://Management/dialoguebox/sprite.jpeg" id="4_e2t75"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b81ud"]
+radius = 25.179358
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_adso8"]
+radius = 65.27634
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xfxkd"]
+bg_color = Color(0, 0, 0, 0.34117648)
+
+[node name="Bala" type="StaticBody2D"]
+script = ExtResource("1_8osjy")
+metadata/_custom_type_script = "uid://bsrxansh4sl0j"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("2_6mey3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_b81ud")
+
+[node name="InteractionLabel" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -45.0
+offset_right = 20.0
+offset_bottom = -22.0
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 9
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -24)
+shape = SubResource("CircleShape2D_adso8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Area2D"]
+
+[node name="DialogueBox" type="Sprite2D" parent="Area2D/CanvasLayer"]
+position = Vector2(640, 523)
+texture = ExtResource("3_3wpbs")
+
+[node name="Timer" type="Timer" parent="Area2D/CanvasLayer"]
+
+[node name="DialogueText" type="Label" parent="Area2D/CanvasLayer"]
+z_index = 1
+offset_left = 327.0
+offset_top = 436.0
+offset_right = 967.0
+offset_bottom = 598.0
+autowrap_mode = 2
+
+[node name="BlurredBackground" type="Label" parent="Area2D/CanvasLayer"]
+offset_right = 1282.0
+offset_bottom = 650.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_xfxkd")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D/CanvasLayer"]
+position = Vector2(640, 213)
+scale = Vector2(1.2222223, 1.2222222)
+texture = ExtResource("4_e2t75")

@@ -49,7 +49,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xbboc"]
-radius = 53.037724
+radius = 121.0661
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f4i7g"]
 bg_color = Color(0, 0, 0, 0)

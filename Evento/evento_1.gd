@@ -1,7 +1,7 @@
 extends StaticBody2D
-class_name Dad
+class_name Evento1
 
-@export var character_name: String = "Creeper" # 🧩 Nome configurável do personagem
+@export var character_name: String = "Creeper" # Nome configurável do personagem
 
 @onready var interactionlabel: Label = $Area2D/InteractionLabel
 @onready var dialogue_box: Label = $Area2D/CanvasLayer/DialogueBox
@@ -12,22 +12,24 @@ class_name Dad
 
 var _character_ref: BaseCharacter = null
 var talking = false
-var keep_going = false
 var showing_text = false
-var current_text = ""
 var skip_text = false
 var index_line = 0
+var keep_going = false
+var current_text = ""
 
 var lines = [
-	{"name": "Pai", "text": "..."},
-	{"name": "Maria", "text": "Ei pai!"},
-	{"name": "Pai", "text": "..."}
+	{"name": "Maria", "text": "..."},
+	{"name": "Maria", "text": "Meu pai tá sempre ocupado."},
+	{"name": "Maria", "text": "Ele nem me ouviu..."}
+	
 ]
+
+# 🔒 Evento de uso único
+var event_finished: bool = false
 
 
 func _ready() -> void:
-	print("pai", creeper)
-	
 	dialogue_box.visible = false
 	dialogue_text.visible = false
 	name_character.visible = false
@@ -36,42 +38,37 @@ func _ready() -> void:
 	shadowbox.visible = false
 
 
-
 func _on_area_2d_body_entered(_body: Node2D) -> void:
+	if event_finished:
+		return # já foi executado
 	if _body is BaseCharacter:
 		_character_ref = _body
-		interactionlabel.text = "[E]"
-		interactionlabel.visible = true
+		start_dialogue()
 
 
 func _on_area_2d_body_exited(_body: Node2D) -> void:
-	
-	_character_ref = null
-	interactionlabel.visible = false
-	if talking:
-		end_dialogue()
+	if _character_ref == _body:
+		_character_ref = null
 
 
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("interact") and _character_ref != null and not talking:
-		start_dialogue()
-	elif talking:
-		if showing_text and Input.is_action_just_pressed("interact"):
+func _process(_delta: float) -> void:
+	# ✅ Agora o botão "interact" controla a progressão das falas
+	if talking and Input.is_action_just_pressed("interact"):
+		if showing_text:
 			skip_text = true
-		elif keep_going and Input.is_action_just_pressed("interact"):
+		elif keep_going:
 			next_line()
 
 
 func start_dialogue():
 	talking = true
-	interactionlabel.visible = false
 	dialogue_box.visible = true
 	dialogue_text.visible = true
 	name_character.visible = true
 	creeper.visible = true
 	shadowbox.visible = true
-	
-	name_character.text = character_name # 🧩 Mostra o nome do personagem
+
+	name_character.text = character_name
 	index_line = 0
 	next_line()
 
@@ -81,31 +78,29 @@ func next_line():
 		keep_going = false
 		dialogue_text.text = ""
 
-		# Pegamos o dicionário da linha atual
 		var current_line = lines[index_line]
 		index_line += 1
 
-		# Define o nome de quem está falando
 		if current_line.has("name"):
 			name_character.text = current_line["name"]
 
-		# Mostra o texto com o efeito de digitação
 		await show_text_with_effect(current_line["text"])
 	else:
 		end_dialogue()
-
 
 
 func show_text_with_effect(text: String) -> void:
 	showing_text = true
 	skip_text = false
 	dialogue_text.text = ""
+
 	for letter in text:
 		if skip_text:
 			dialogue_text.text = text
 			break
 		dialogue_text.text += letter
 		await get_tree().create_timer(0.02).timeout
+
 	showing_text = false
 	keep_going = true
 
@@ -120,3 +115,6 @@ func end_dialogue():
 	name_character.visible = false
 	creeper.visible = false
 	shadowbox.visible = false
+
+	event_finished = true
+	$Area2D.monitoring = false

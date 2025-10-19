@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwi8ybur3ajms"
-path="res://.godot/imported/Warrior_Run.png-c3cfdbf4eb17152483c906fadf64964d.ctex"
+uid="uid://sl2bgwb2nb7d"
+path="res://.godot/imported/joão sprite.png-f7e85255e29033540b2eb09ce59dfa16.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Warrior/Warrior_Run.png"
-dest_files=["res://.godot/imported/Warrior_Run.png-c3cfdbf4eb17152483c906fadf64964d.ctex"]
+source_file="res://World/sprites/joão/joão sprite.png"
+dest_files=["res://.godot/imported/joão sprite.png-f7e85255e29033540b2eb09ce59dfa16.ctex"]
 
 [params]
 

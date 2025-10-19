@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0kki041wb3st"
-path="res://.godot/imported/Warrior_Attack1.png-39ac1db394b70f508492a2127843fb26.ctex"
+uid="uid://dywpq0r53dhwg"
+path="res://.godot/imported/bala 2 ing.png-3d52e1606ec7266ac3ef95cab2b60655.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Warrior/Warrior_Attack1.png"
-dest_files=["res://.godot/imported/Warrior_Attack1.png-39ac1db394b70f508492a2127843fb26.ctex"]
+source_file="res://World/Balas/bala 2 ing.png"
+dest_files=["res://.godot/imported/bala 2 ing.png-3d52e1606ec7266ac3ef95cab2b60655.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4jtummnofmsx"
-path="res://.godot/imported/Spritesheet.png-e5595aeca254e579da38d759e1f83781.ctex"
+uid="uid://bpj1xbiyi8f21"
+path="res://.godot/imported/JOAO_andar_esquerda.png-0b0492881896d6065c23c4ebd800c7dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Warrior/Spritesheet.png"
-dest_files=["res://.godot/imported/Spritesheet.png-e5595aeca254e579da38d759e1f83781.ctex"]
+source_file="res://World/sprites/joão/JOAO_andar_esquerda.png"
+dest_files=["res://.godot/imported/JOAO_andar_esquerda.png-0b0492881896d6065c23c4ebd800c7dd.ctex"]
 
 [params]
 

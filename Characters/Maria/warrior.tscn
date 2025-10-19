@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://m00jrjiynkxa"]
 
-[ext_resource type="PackedScene" uid="uid://bgcjt77revgdq" path="res://Characters/Warrior/base_character.tscn" id="1_irwnv"]
+[ext_resource type="PackedScene" uid="uid://bgcjt77revgdq" path="res://Characters/Maria/base_character.tscn" id="1_irwnv"]
 [ext_resource type="Texture2D" uid="uid://kjnet8bybtp3" path="res://SpritesMaria/idle0.tres" id="2_8erid"]
 [ext_resource type="Texture2D" uid="uid://dvfp6lgoqgu2k" path="res://SpritesMaria/idleleft0.tres" id="3_va6qd"]
 [ext_resource type="Texture2D" uid="uid://diqlu7newvvwr" path="res://SpritesMaria/down0.tres" id="4_1bc58"]

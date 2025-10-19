@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://dc2k70c0gmrs1" path="res://World/Bench/Bench.png" id="1_d7md6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gocgn"]
-radius = 35.0
-height = 102.0
+radius = 31.0
+height = 96.0
 
 [node name="Bench" type="StaticBody2D"]
 
@@ -16,6 +16,6 @@ texture = ExtResource("1_d7md6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(0, 6)
+position = Vector2(1, 13)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_gocgn")
